@@ -1,0 +1,28 @@
+<html>
+
+<body>
+<input type='text' id="textBox"style="width:500px" />
+<button onclick="getBranchName()">Get Branch</button>
+
+<br/>
+<br/>
+<br/>
+<label id="lbl"></label>
+</body>
+<script>
+
+function getBranchName(){
+ var str=document.getElementById('textBox').value;
+ if(str.indexOf('User Story')>=0)
+ {
+   str=str.replace("User Story",'pbi');
+ }
+ str=str.toLowerCase().replace(" ","/").replaceAll(" ",'-').replace(":","").replace(",","");
+ document.getElementById('lbl').textContent=str;
+ navigator.clipboard.writeText(str);
+}
+
+</script>
+
+
+</html>
